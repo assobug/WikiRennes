@@ -1,0 +1,925 @@
+diff --git c/skins/MonoBook.deps.php i/skins/WikiRennes.deps.php
+similarity index 100%
+rename from skins/MonoBook.deps.php
+rename to skins/WikiRennes.deps.php
+diff --git c/skins/MonoBook.php i/skins/WikiRennes.php
+similarity index 76%
+rename from skins/MonoBook.php
+rename to skins/WikiRennes.php
+index 2312de0..4fbfd88 100644
+--- c/skins/MonoBook.php
++++ i/skins/WikiRennes.php
+@@ -1,5 +1,6 @@
+ <?php
+ /**
++ * WikiRennes_skin d'après :
+  * MonoBook nouveau
+  *
+  * Translated from gwicke's previous TAL template version to remove
+@@ -18,13 +19,13 @@ if( !defined( 'MEDIAWIKI' ) )
+  * @todo document
+  * @ingroup Skins
+  */
+-class SkinMonoBook extends SkinTemplate {
++class SkinWikiRennes extends SkinTemplate {
+ 	/** Using monobook. */
+ 	function initPage( OutputPage $out ) {
+ 		parent::initPage( $out );
+-		$this->skinname  = 'monobook';
+-		$this->stylename = 'monobook';
+-		$this->template  = 'MonoBookTemplate';
++		$this->skinname  = 'wikirennes';
++		$this->stylename = 'wikirennes';
++		$this->template  = 'WikiRennesTemplate';
+ 
+ 	}
+ 
+@@ -34,18 +35,18 @@ class SkinMonoBook extends SkinTemplate {
+ 		parent::setupSkinUserCss( $out );
+ 
+ 		// Append to the default screen common & print styles...
+-		$out->addStyle( 'monobook/main.css', 'screen' );
++		$out->addStyle( 'wikirennes/main.css', 'screen' );
+ 		if( $wgHandheldStyle ) {
+ 			// Currently in testing... try 'chick/main.css'
+ 			$out->addStyle( $wgHandheldStyle, 'handheld' );
+ 		}
+ 
+-		$out->addStyle( 'monobook/IE50Fixes.css', 'screen', 'lt IE 5.5000' );
+-		$out->addStyle( 'monobook/IE55Fixes.css', 'screen', 'IE 5.5000' );
+-		$out->addStyle( 'monobook/IE60Fixes.css', 'screen', 'IE 6' );
+-		$out->addStyle( 'monobook/IE70Fixes.css', 'screen', 'IE 7' );
++		$out->addStyle( 'wikirennes/IE50Fixes.css', 'screen', 'lt IE 5.5000' );
++		$out->addStyle( 'wikirennes/IE55Fixes.css', 'screen', 'IE 5.5000' );
++		$out->addStyle( 'wikirennes/IE60Fixes.css', 'screen', 'IE 6' );
++		$out->addStyle( 'wikirennes/IE70Fixes.css', 'screen', 'IE 7' );
+ 
+-		$out->addStyle( 'monobook/rtl.css', 'screen', '', 'rtl' );
++		$out->addStyle( 'wikirennes/rtl.css', 'screen', '', 'rtl' );
+ 	}
+ }
+ 
+@@ -53,7 +54,7 @@ class SkinMonoBook extends SkinTemplate {
+  * @todo document
+  * @ingroup Skins
+  */
+-class MonoBookTemplate extends QuickTemplate {
++class WikiRennesTemplate extends QuickTemplate {
+ 	var $skin;
+ 	/**
+ 	 * Template filter callback for MonoBook skin.
+@@ -87,7 +88,10 @@ class MonoBookTemplate extends QuickTemplate {
+ 
+ 		<?php print Skin::makeGlobalVariablesScript( $this->data ); ?>
+ 
+-		<script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('stylepath' ) ?>/common/wikibits.js?<?php echo $GLOBALS['wgStyleVersion'] ?>"><!-- wikibits js --></script>
++		<!-- <script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('stylepath' ) ?>/common/wikibits.js?<?php echo $GLOBALS['wgStyleVersion'] ?>"> -->
++		<!-- wikibits js -->
++		<!-- </script> -->
++
+ 		<!-- Head Scripts -->
+ <?php $this->html('headscripts') ?>
+ <?php	if($this->data['jsvarurl']) { ?>
+@@ -106,6 +110,8 @@ class MonoBookTemplate extends QuickTemplate {
+ 		<script type="<?php $this->text('jsmimetype') ?>"><?php $this->html('userjsprev') ?></script>
+ <?php	}
+ 		if($this->data['trackbackhtml']) print $this->data['trackbackhtml']; ?>
++
++		<script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('stylepath' ) ?>/WikiRennes.js"></script>
+ 	</head>
+ <body<?php if($this->data['body_ondblclick']) { ?> ondblclick="<?php $this->text('body_ondblclick') ?>"<?php } ?>
+ <?php if($this->data['body_onload']) { ?> onload="<?php $this->text('body_onload') ?>"<?php } ?>
+@@ -135,7 +141,11 @@ class MonoBookTemplate extends QuickTemplate {
+ 	<div id="p-cactions" class="portlet">
+ 		<h5><?php $this->msg('views') ?></h5>
+ 		<div class="pBody">
++
+ 			<ul>
++				<li id="ong-left">
++					<img src="<?php echo $this->text('stylepath') ?>/wikirennes/onglet-left.png" border="0" width="3" height="25" style="margin-right: -0.3em;" />
++				</li>
+ 	<?php		foreach($this->data['content_actions'] as $key => $tab) {
+ 					echo '
+ 				 <li id="' . Sanitizer::escapeId( "ca-$key" ) . '"';
+@@ -153,11 +163,16 @@ class MonoBookTemplate extends QuickTemplate {
+ 				 	&& in_array( $key, array( 'edit', 'watch', 'unwatch' ))) {
+ 				 		echo $skin->tooltip( "ca-$key" );
+ 				 	} else {
+-				 		echo $skin->tooltipAndAccesskey( "ca-$key" );
++				 		// echo $skin->tooltipAndAccesskey( "ca-$key" );
++				 		echo $skin->tooltipAndAccesskeyAttribs('ca-$key');
+ 				 	}
+ 				 	echo '>'.htmlspecialchars($tab['text']).'</a></li>';
+ 				} ?>
++				<li id="ong-right">
++					<img src="<?php echo $this->text('stylepath') ?>/wikirennes/onglet-right.png" border="0" width="6" height="25" />
++				</li>
+ 			</ul>
++
+ 		</div>
+ 	</div>
+ 	<div class="portlet" id="p-personal">
+@@ -167,7 +182,8 @@ class MonoBookTemplate extends QuickTemplate {
+ <?php 			foreach($this->data['personal_urls'] as $key => $item) { ?>
+ 				<li id="<?php echo Sanitizer::escapeId( "pt-$key" ) ?>"<?php
+ 					if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
+-				echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskey('pt-'.$key) ?><?php
++
++				echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskeyAttribs('pt-'.$key) ?><?php
+ 				if(!empty($item['class'])) { ?> class="<?php
+ 				echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
+ 				echo htmlspecialchars($item['text']) ?></a></li>
+@@ -178,7 +194,10 @@ class MonoBookTemplate extends QuickTemplate {
+ 	<div class="portlet" id="p-logo">
+ 		<a style="background-image: url(<?php $this->text('logopath') ?>);" <?php
+ 			?>href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>"<?php
+-			echo $skin->tooltipAndAccesskey('p-logo') ?>></a>
++
++			echo $skin->tooltipAndAccesskeyAttribs('p-logo') ?>>
++			<img src="<?php $this->text('logopath') ?>" width="135" height="135">
++		</a>
+ 	</div>
+ 	<script type="<?php $this->text('jsmimetype') ?>"> if (window.isMSIE55) fixalpha(); </script>
+ <?php
+@@ -198,6 +217,14 @@ class MonoBookTemplate extends QuickTemplate {
+ 			}
+ 		}
+ ?>
++
++		<div class="portlet" id="p-footer">
++			<img src="<?php echo $this->text('stylepath') ?>/wikirennes/logo-vdr.png" width="66" height="58" style="float: right;"/>
++			<img src="<?php echo $this->text('stylepath') ?>/wikirennes/logo-bug.png" width="47" height="78" />
++			<img src="<?php echo $this->text('stylepath') ?>/wikirennes/logo-metropole.png" width="120" height="46" style="margin: 15px 0 0 10px;" />
++		</div>
++		<img src="<?php echo $this->text('stylepath') ?>/wikirennes/cl-footer.png" width="230" height="50" style="margin-left: 12px;" />
++
+ 		</div><!-- end of the left (by default at least) column -->
+ 			<div class="visualClear"></div>
+ 			<div id="footer">
+@@ -206,12 +233,17 @@ class MonoBookTemplate extends QuickTemplate {
+ 				<div id="f-poweredbyico"><?php $this->html('poweredbyico') ?></div>
+ <?php 	}
+ 		if($this->data['copyrightico']) { ?>
+-				<div id="f-copyrightico"><?php $this->html('copyrightico') ?></div>
++				<div id="f-copyrightico">
++					<a href="http://www.wiki-rennes.fr/Licence">
++						<img width="88" height="31" alt="Creative Commons" src="/skins/common/images/creativeCommonsBig.jpg" style="border: solid 2px #000;" />
++					</a>
++					<?php //$this->html('copyrightico') ?>
++				</div>
+ <?php	}
+ 
+ 		// Generate additional footer links
+ 		$footerlinks = array(
+-			'lastmod', 'viewcount', 'numberofwatchingusers', 'credits', 'copyright',
++			'lastmod', 'viewcount', 'numberofwatchingusers', 'credits',
+ 			'privacy', 'about', 'disclaimer', 'tagline',
+ 		);
+ 		$validFooterLinks = array();
+@@ -252,20 +284,21 @@ class MonoBookTemplate extends QuickTemplate {
+ 		global $wgUseTwoButtonsSearchForm;
+ ?>
+ 	<div id="p-search" class="portlet">
+-		<h5><label for="searchInput"><?php $this->msg('search') ?></label></h5>
++		<h5 style="display: none;"><label for="searchInput"><?php $this->msg('search') ?></label></h5>
+ 		<div id="searchBody" class="pBody">
+ 			<form action="<?php $this->text('wgScript') ?>" id="searchform"><div>
+ 				<input type='hidden' name="title" value="<?php $this->text('searchtitle') ?>"/>
+-				<input id="searchInput" name="search" type="text"<?php echo $this->skin->tooltipAndAccesskey('search');
++				<input id="searchInput" name="search" type="text"<?php echo $this->skin->tooltipAndAccesskeyAttribs('search');
+ 					if( isset( $this->data['search'] ) ) {
+ 						?> value="<?php $this->text('search') ?>"<?php } ?> />
+-				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="<?php $this->msg('searcharticle') ?>"<?php echo $this->skin->tooltipAndAccesskey( 'search-go' ); ?> /><?php if ($wgUseTwoButtonsSearchForm) { ?>&nbsp;
+-				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="<?php $this->msg('searchbutton') ?>"<?php echo $this->skin->tooltipAndAccesskey( 'search-fulltext' ); ?> /><?php } else { ?>
++				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="<?php $this->msg('searcharticle') ?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs( 'search-go' ); ?> /><?php if ($wgUseTwoButtonsSearchForm) { ?>&nbsp;
++				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="<?php $this->msg('searchbutton') ?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs( 'search-fulltext' ); ?> /><?php } else { ?>
+ 
+ 				<div><a href="<?php $this->text('searchaction') ?>" rel="search"><?php $this->msg('powersearch-legend') ?></a></div><?php } ?>
+ 
+ 			</div></form>
+ 		</div>
++		<img src="<?php echo $this->text('stylepath') ?>/wikirennes/separator.png" width="168" height="1" style="margin: 10px 0 0;" />
+ 	</div>
+ <?php
+ 	}
+@@ -281,23 +314,23 @@ class MonoBookTemplate extends QuickTemplate {
+ 		if($this->data['notspecialpage']) { ?>
+ 				<li id="t-whatlinkshere"><a href="<?php
+ 				echo htmlspecialchars($this->data['nav_urls']['whatlinkshere']['href'])
+-				?>"<?php echo $this->skin->tooltipAndAccesskey('t-whatlinkshere') ?>><?php $this->msg('whatlinkshere') ?></a></li>
++				?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs('t-whatlinkshere') ?>><?php $this->msg('whatlinkshere') ?></a></li>
+ <?php
+ 			if( $this->data['nav_urls']['recentchangeslinked'] ) { ?>
+ 				<li id="t-recentchangeslinked"><a href="<?php
+ 				echo htmlspecialchars($this->data['nav_urls']['recentchangeslinked']['href'])
+-				?>"<?php echo $this->skin->tooltipAndAccesskey('t-recentchangeslinked') ?>><?php $this->msg('recentchangeslinked') ?></a></li>
++				?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs('t-recentchangeslinked') ?>><?php $this->msg('recentchangeslinked') ?></a></li>
+ <?php 		}
+ 		}
+ 		if(isset($this->data['nav_urls']['trackbacklink'])) { ?>
+ 			<li id="t-trackbacklink"><a href="<?php
+ 				echo htmlspecialchars($this->data['nav_urls']['trackbacklink']['href'])
+-				?>"<?php echo $this->skin->tooltipAndAccesskey('t-trackbacklink') ?>><?php $this->msg('trackbacklink') ?></a></li>
++				?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs('t-trackbacklink') ?>><?php $this->msg('trackbacklink') ?></a></li>
+ <?php 	}
+ 		if($this->data['feeds']) { ?>
+ 			<li id="feedlinks"><?php foreach($this->data['feeds'] as $key => $feed) {
+ 					?><a id="<?php echo Sanitizer::escapeId( "feed-$key" ) ?>" href="<?php
+-					echo htmlspecialchars($feed['href']) ?>" rel="alternate" type="application/<?php echo $key ?>+xml" class="feedlink"<?php echo $this->skin->tooltipAndAccesskey('feed-'.$key) ?>><?php echo htmlspecialchars($feed['text'])?></a>&nbsp;
++					echo htmlspecialchars($feed['href']) ?>" rel="alternate" type="application/<?php echo $key ?>+xml" class="feedlink"<?php echo $this->skin->tooltipAndAccesskeyAttribs('feed-'.$key) ?>><?php echo htmlspecialchars($feed['text'])?></a>&nbsp;
+ 					<?php } ?></li><?php
+ 		}
+ 
+@@ -305,18 +338,18 @@ class MonoBookTemplate extends QuickTemplate {
+ 
+ 			if($this->data['nav_urls'][$special]) {
+ 				?><li id="t-<?php echo $special ?>"><a href="<?php echo htmlspecialchars($this->data['nav_urls'][$special]['href'])
+-				?>"<?php echo $this->skin->tooltipAndAccesskey('t-'.$special) ?>><?php $this->msg($special) ?></a></li>
++				?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs('t-'.$special) ?>><?php $this->msg($special) ?></a></li>
+ <?php		}
+ 		}
+ 
+ 		if(!empty($this->data['nav_urls']['print']['href'])) { ?>
+ 				<li id="t-print"><a href="<?php echo htmlspecialchars($this->data['nav_urls']['print']['href'])
+-				?>" rel="alternate"<?php echo $this->skin->tooltipAndAccesskey('t-print') ?>><?php $this->msg('printableversion') ?></a></li><?php
++				?>" rel="alternate"<?php echo $this->skin->tooltipAndAccesskeyAttribs('t-print') ?>><?php $this->msg('printableversion') ?></a></li><?php
+ 		}
+ 
+ 		if(!empty($this->data['nav_urls']['permalink']['href'])) { ?>
+ 				<li id="t-permalink"><a href="<?php echo htmlspecialchars($this->data['nav_urls']['permalink']['href'])
+-				?>"<?php echo $this->skin->tooltipAndAccesskey('t-permalink') ?>><?php $this->msg('permalink') ?></a></li><?php
++				?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs('t-permalink') ?>><?php $this->msg('permalink') ?></a></li><?php
+ 		} elseif ($this->data['nav_urls']['permalink']['href'] === '') { ?>
+ 				<li id="t-ispermalink"<?php echo $this->skin->tooltip('t-ispermalink') ?>><?php $this->msg('permalink') ?></li><?php
+ 		}
+@@ -326,6 +359,7 @@ class MonoBookTemplate extends QuickTemplate {
+ ?>
+ 			</ul>
+ 		</div>
++		<img src="<?php echo $this->text('stylepath') ?>/wikirennes/separator.png" width="168" height="1" style="margin: 10px 0 0;" />
+ 	</div>
+ <?php
+ 	}
+@@ -360,7 +394,7 @@ class MonoBookTemplate extends QuickTemplate {
+ <?php 			foreach($cont as $key => $val) { ?>
+ 				<li id="<?php echo Sanitizer::escapeId($val['id']) ?>"<?php
+ 					if ( $val['active'] ) { ?> class="active" <?php }
+-				?>><a href="<?php echo htmlspecialchars($val['href']) ?>"<?php echo $this->skin->tooltipAndAccesskey($val['id']) ?>><?php echo htmlspecialchars($val['text']) ?></a></li>
++				?>><a href="<?php echo htmlspecialchars($val['href']) ?>"<?php echo $this->skin->tooltipAndAccesskeyAttribs($val['id']) ?>><?php echo htmlspecialchars($val['text']) ?></a></li>
+ <?php			} ?>
+ 			</ul>
+ <?php   } else {
+@@ -369,6 +403,7 @@ class MonoBookTemplate extends QuickTemplate {
+ 		}
+ ?>
+ 		</div>
++		<img src="<?php echo $this->text('stylepath') ?>/wikirennes/separator.png" width="168" height="1" style="margin: 10px 0 0;" />
+ 	</div>
+ <?php
+ 	}
+diff --git c/skins/monobook/headbg.jpg i/skins/monobook/headbg.jpg
+deleted file mode 100644
+index 5491c6e..0000000
+Binary files c/skins/monobook/headbg.jpg and /dev/null differ
+diff --git c/skins/monobook/FF2Fixes.css i/skins/wikirennes/FF2Fixes.css
+similarity index 100%
+rename from skins/monobook/FF2Fixes.css
+rename to skins/wikirennes/FF2Fixes.css
+diff --git c/skins/monobook/IE50Fixes.css i/skins/wikirennes/IE50Fixes.css
+similarity index 100%
+rename from skins/monobook/IE50Fixes.css
+rename to skins/wikirennes/IE50Fixes.css
+diff --git c/skins/monobook/IE55Fixes.css i/skins/wikirennes/IE55Fixes.css
+similarity index 100%
+rename from skins/monobook/IE55Fixes.css
+rename to skins/wikirennes/IE55Fixes.css
+diff --git c/skins/monobook/IE60Fixes.css i/skins/wikirennes/IE60Fixes.css
+similarity index 94%
+rename from skins/monobook/IE60Fixes.css
+rename to skins/wikirennes/IE60Fixes.css
+index e6e447f..f510792 100644
+--- c/skins/monobook/IE60Fixes.css
++++ i/skins/wikirennes/IE60Fixes.css
+@@ -7,8 +7,8 @@
+ 	height: 1%;
+ }
+ #column-content #content {
+-	margin-left: 12.2em;
+-	margin-top: 3em;
++	margin-left: 20.2em;
++	margin-top: 13em;
+ 	height: 1%;
+ }
+ #column-one {
+@@ -25,7 +25,7 @@
+ /* the tabs */
+ 
+ #p-cactions {
+-	z-index: 3;
++	/* z-index: 3; */
+ }
+ 
+ #p-cactions li {
+@@ -39,7 +39,7 @@
+ 	display: inline-block !important;
+ 	vertical-align: top;
+ 	padding-bottom: 0;
+-	border: solid #aaa;
++	/* border: solid #aaa; */
+ 	border-width: 1px 1px 0;
+ }
+ #p-cactions li.selected a {
+@@ -96,3 +96,5 @@ div.tleft {
+ body.rtl #preftoc a, body.rtl #preftoc a:active {
+ 	float: left;
+ }
++
++
+diff --git c/skins/monobook/IE70Fixes.css i/skins/wikirennes/IE70Fixes.css
+similarity index 96%
+rename from skins/monobook/IE70Fixes.css
+rename to skins/wikirennes/IE70Fixes.css
+index 0014586..121532bd 100644
+--- c/skins/monobook/IE70Fixes.css
++++ i/skins/wikirennes/IE70Fixes.css
+@@ -4,7 +4,7 @@
+ 
+ /* This bit is needed to make links clickable... WTF */
+ #column-content #content {
+-	margin-left: 12.2em;
++	margin-left: 20.2em;
+ 	margin-top: 3em;
+ 	height: 1%;
+ }
+@@ -47,7 +47,7 @@
+ 	display: inline-block !important;
+ 	vertical-align: top;
+ 	padding-bottom: 0;
+-	border: solid #aaa;
++	/*border: solid #aaa;*/
+ 	border-width: 1px 1px 0;
+ }
+ #p-cactions li.selected a {
+diff --git c/skins/monobook/IEMacFixes.css i/skins/wikirennes/IEMacFixes.css
+similarity index 100%
+rename from skins/monobook/IEMacFixes.css
+rename to skins/wikirennes/IEMacFixes.css
+diff --git c/skins/monobook/KHTMLFixes.css i/skins/wikirennes/KHTMLFixes.css
+similarity index 100%
+rename from skins/monobook/KHTMLFixes.css
+rename to skins/wikirennes/KHTMLFixes.css
+diff --git c/skins/monobook/Opera6Fixes.css i/skins/wikirennes/Opera6Fixes.css
+similarity index 100%
+rename from skins/monobook/Opera6Fixes.css
+rename to skins/wikirennes/Opera6Fixes.css
+diff --git c/skins/monobook/Opera7Fixes.css i/skins/wikirennes/Opera7Fixes.css
+similarity index 100%
+rename from skins/monobook/Opera7Fixes.css
+rename to skins/wikirennes/Opera7Fixes.css
+diff --git c/skins/monobook/Opera9Fixes.css i/skins/wikirennes/Opera9Fixes.css
+similarity index 100%
+rename from skins/monobook/Opera9Fixes.css
+rename to skins/wikirennes/Opera9Fixes.css
+diff --git c/skins/monobook/audio.png i/skins/wikirennes/audio.png
+similarity index 100%
+rename from skins/monobook/audio.png
+rename to skins/wikirennes/audio.png
+diff --git c/skins/monobook/bullet.gif i/skins/wikirennes/bullet.gif
+similarity index 100%
+rename from skins/monobook/bullet.gif
+rename to skins/wikirennes/bullet.gif
+diff --git c/skins/wikirennes/cl-footer.png i/skins/wikirennes/cl-footer.png
+new file mode 100644
+index 0000000..f288a91
+Binary files /dev/null and i/skins/wikirennes/cl-footer.png differ
+diff --git c/skins/wikirennes/colonne-left.png i/skins/wikirennes/colonne-left.png
+new file mode 100644
+index 0000000..26f6fc0
+Binary files /dev/null and i/skins/wikirennes/colonne-left.png differ
+diff --git c/skins/monobook/discussionitem_icon.gif i/skins/wikirennes/discussionitem_icon.gif
+similarity index 100%
+rename from skins/monobook/discussionitem_icon.gif
+rename to skins/wikirennes/discussionitem_icon.gif
+diff --git c/skins/monobook/document.png i/skins/wikirennes/document.png
+similarity index 100%
+rename from skins/monobook/document.png
+rename to skins/wikirennes/document.png
+diff --git c/skins/monobook/external-rtl.png i/skins/wikirennes/external-rtl.png
+similarity index 100%
+rename from skins/monobook/external-rtl.png
+rename to skins/wikirennes/external-rtl.png
+diff --git c/skins/monobook/external.png i/skins/wikirennes/external.png
+similarity index 100%
+rename from skins/monobook/external.png
+rename to skins/wikirennes/external.png
+diff --git c/skins/monobook/file_icon.gif i/skins/wikirennes/file_icon.gif
+similarity index 100%
+rename from skins/monobook/file_icon.gif
+rename to skins/wikirennes/file_icon.gif
+diff --git c/skins/wikirennes/headbg.jpg i/skins/wikirennes/headbg.jpg
+new file mode 100644
+index 0000000..d44a5db
+Binary files /dev/null and i/skins/wikirennes/headbg.jpg differ
+diff --git c/skins/monobook/link_icon.gif i/skins/wikirennes/link_icon.gif
+similarity index 100%
+rename from skins/monobook/link_icon.gif
+rename to skins/wikirennes/link_icon.gif
+diff --git c/skins/monobook/lock_icon.gif i/skins/wikirennes/lock_icon.gif
+similarity index 100%
+rename from skins/monobook/lock_icon.gif
+rename to skins/wikirennes/lock_icon.gif
+diff --git c/skins/wikirennes/logo-bug.png i/skins/wikirennes/logo-bug.png
+new file mode 100644
+index 0000000..455f5a9
+Binary files /dev/null and i/skins/wikirennes/logo-bug.png differ
+diff --git c/skins/wikirennes/logo-metropole.png i/skins/wikirennes/logo-metropole.png
+new file mode 100644
+index 0000000..c0c0ff6
+Binary files /dev/null and i/skins/wikirennes/logo-metropole.png differ
+diff --git c/skins/wikirennes/logo-vdr.png i/skins/wikirennes/logo-vdr.png
+new file mode 100644
+index 0000000..55c40f7
+Binary files /dev/null and i/skins/wikirennes/logo-vdr.png differ
+diff --git c/skins/monobook/magnify-clip.png i/skins/wikirennes/magnify-clip.png
+similarity index 100%
+rename from skins/monobook/magnify-clip.png
+rename to skins/wikirennes/magnify-clip.png
+diff --git c/skins/monobook/mail_icon.gif i/skins/wikirennes/mail_icon.gif
+similarity index 100%
+rename from skins/monobook/mail_icon.gif
+rename to skins/wikirennes/mail_icon.gif
+diff --git c/skins/monobook/main.css i/skins/wikirennes/main.css
+similarity index 89%
+rename from skins/monobook/main.css
+rename to skins/wikirennes/main.css
+index d6a67c1..5ae1c81 100644
+--- c/skins/monobook/main.css
++++ i/skins/wikirennes/main.css
+@@ -1,4 +1,5 @@
+ /*
++** WikiRennes based on :
+ ** MediaWiki 'monobook' style sheet for CSS2-capable browsers.
+ ** Copyright Gabriel Wicke - http://wikidev.net/
+ ** License: GPL (http://www.gnu.org/copyleft/gpl.html)
+@@ -12,23 +13,30 @@
+ #column-content {
+ 	width: 100%;
+ 	float: right;
+-	margin: 0 0 .6em -12.2em;
++	margin: 140px 0 .6em -20.2em;
+ 	padding: 0;
+ }
+ #content {
+-	margin: 2.8em 0 0 12.2em;
+-	padding: 0 1em 1em 1em;
++	margin: 2.8em 0 0 20.2em;
++	padding: 0.5em 2em 2em;
+ 	position: relative;
+ 	z-index: 2;
+ }
+ #column-one {
+ 	padding-top: 160px;
++	background: transparent url(colonne-left.png) 0 0 repeat-y;
+ }
++
+ #content {
+ 	background: white;
+ 	color: black;
+-	border: 1px solid #aaa;
+-	border-right: none;
++	/*border: 1px solid #aaa;
++	border-right: none;*/
++	
++	border: 1px solid #eee;
++	-moz-border-radius: 20px;
++	-webkit-border-radius: 20px;
++	border-radius: 20px;
+ 	line-height: 1.5em;
+ }
+ /* the left column width is specified in class .portlet */
+@@ -40,8 +48,8 @@
+ */
+ 
+ body {
+-	font: x-small sans-serif;
+-	background: #f9f9f9 url(headbg.jpg) 0 0 no-repeat;
++	font: x-small georgia	;
++	background: #fff url(headbg.jpg) 0 0 repeat-x;
+ 	color: black;
+ 	margin: 0;
+ 	padding: 0;
+@@ -73,11 +81,11 @@ fieldset table {
+ }
+ a {
+ 	text-decoration: none;
+-	color: #002bb8;
++	color: #33cc00;
+ 	background: none;
+ }
+ a:visited {
+-	color: #5a3696;
++	color: #2eb700;
+ }
+ a:active {
+ 	color: #faa700;
+@@ -89,10 +97,12 @@ a.stub {
+ 	color: #772233;
+ }
+ a.new, #p-personal a.new {
+-	color: #ba0000;
++	/*color: #ba0000;*/
++	color: #3399ff;
+ }
+ a.new:visited, #p-personal a.new:visited {
+-	color: #a55858;
++	/*color: #a55858;*/
++	color: #2C85DD;
+ }
+ 
+ img {
+@@ -113,6 +123,7 @@ hr {
+ 	background-color: #aaa;
+ 	border: 0;
+ 	margin: .2em 0 .2em 0;
++	clear: both;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+@@ -123,6 +134,8 @@ h1, h2, h3, h4, h5, h6 {
+ 	padding-top: .5em;
+ 	padding-bottom: .17em;
+ 	border-bottom: 1px solid #aaa;
++	
++	font-family: arial;
+ }
+ h1 { font-size: 188%; }
+ h1 .editsection { font-size: 53%; }
+@@ -443,12 +456,16 @@ div.thumb {
+ 	width: auto;
+ }
+ div.thumbinner {
+-	border: 1px solid #ccc;
++	border: 1px solid #eee;
+ 	padding: 3px !important;
+-	background-color: #f9f9f9;
++	background-color: #eee;
+ 	font-size: 94%;
+ 	text-align: center;
+ 	overflow: hidden;
++	
++	-moz-border-radius: 5px;
++	-webkit-border-radius: 5px;
++	border-radius: 5px;
+ }
+ html .thumbimage {
+ 	border: 1px solid #ccc;
+@@ -625,26 +642,30 @@ special external link styling */
+ */
+ .portlet {
+ 	border: none;
+-	margin: 0 0 .5em;
++	margin: 0 0 .5em 40px;
+ 	padding: 0;
+ 	float: none;
+-	width: 11.6em;
++	width: 13.6em;
+ 	overflow: hidden;
+ }
+ .portlet h4 {
+ 	font-size: 95%;
+ 	font-weight: normal;
+ 	white-space: nowrap;
+-}
++} 
+ .portlet h5 {
+ 	background: transparent;
+-	padding: 0 1em 0 .5em;
+-	display: inline;
++	/*padding: 0;*/
++	padding: 0 0 5px;
++	/*display: inline;*/
+ 	height: 1em;
+-	text-transform: lowercase;
+-	font-size: 91%;
+-	font-weight: normal;
++	/*text-transform: lowercase;*/
++	font-size: 132%;
++	font-weight: bold;
+ 	white-space: nowrap;
++	
++	color: #333;
++	text-align: right;
+ }
+ .portlet h6 {
+ 	background: #ffae2e;
+@@ -663,8 +684,11 @@ special external link styling */
+ 	background-color: white;
+ 	color: black;
+ 	border-collapse: collapse;
+-	border: 1px solid #aaa;
+-	padding: 0 .8em .3em .5em;
++	/*border: 1px solid #aaa;*/
++	/*padding: 0 .8em .3em .5em;*/
++	padding: 0 0 .3em .5em;
++	
++	text-align: right;
+ }
+ .portlet h1,
+ .portlet h2,
+@@ -675,22 +699,29 @@ special external link styling */
+ }
+ .portlet ul {
+ 	line-height: 1.5em;
+-	list-style-type: square;
+-	list-style-image: url(bullet.gif);
++	list-style-type: none;
++	list-style-image: none;
+ 	font-size: 95%;
+ }
+ .portlet li {
+ 	padding: 0;
+ 	margin: 0;
+ }
++/* dweez */
++.portlet li a {
++	color: #333;
++}
++.portlet li a:visited {
++	color: #666;
++}
+ 
+ /*
+ ** Logo properties
+ */
+ 
+ #p-logo {
+-	top: 0;
+-	left: 0;
++	top: 20px;
++	left: 37px;
+ 	position: absolute; /*needed to use z-index */
+ 	z-index: 3;
+ 	height: 155px;
+@@ -706,11 +737,20 @@ special external link styling */
+ 	height: 155px;
+ 	width: 12.2em;
+ 	background-repeat: no-repeat;
+-	background-position: 35% 50% !important;
++	/*background-position: 35% 50% !important;*/
+ 	text-decoration: none;
+ }
+ 
+ /*
++** Footer portlet
++*/
++
++#p-footer {
++	padding: 1em 2em;
++	width: 10.6em;
++}
++
++/*
+ ** Search portlet
+ */
+ #p-search {
+@@ -765,7 +805,7 @@ input.searchButton {
+ #p-personal .pBody {
+ 	z-index: 0;
+ 	padding: 0;
+-	margin: 0;
++	margin: 20px 15px 0;
+ 	border: none;
+ 	overflow: visible;
+ 	background: none;
+@@ -795,9 +835,16 @@ input.searchButton {
+ }
+ #p-personal li a {
+ 	text-decoration: none;
+-	color: #005896;
++	/*color: #005896;*/
++	color: #333;
+ 	padding-bottom: .2em;
+-	background: none;
++	background: #fff none;
++	
++	-moz-border-radius: 15px;
++	-webkit-border-radius: 15px;
++	border-radius: 15px;
++	border: 1px solid #D7D7D7;
++	padding: 5px 10px;
+ }
+ #p-personal li a:hover {
+ 	background-color: white;
+@@ -827,16 +874,17 @@ li#pt-login {
+ */
+ #p-cactions {
+ 	position: absolute;
+-	top: 1.3em;
+-	left: 11.5em;
+-	margin: 0;
++	/*top: 1.3em;*/
++	top: 19px;
++	left: 20em;
++	margin: 101px 0 0;
+ 	white-space: nowrap;
+-	width: 76%;
++	/*width: 76%;*/
+ 	line-height: 1.1em;
+ 	overflow: visible;
+ 	background: none;
+ 	border-collapse: collapse;
+-	padding-left: 1em;
++	/*padding-left: 1em;*/
+ 	list-style: none;
+ 	font-size: 95%;
+ }
+@@ -845,12 +893,14 @@ li#pt-login {
+ }
+ #p-cactions li {
+ 	display: inline;
+-	border: 1px solid #aaa;
+-	border-bottom: none;
++	/*border: 1px solid #aaa;
++	border-bottom: none;*/
+ 	padding: 0 0 .1em 0;
+-	margin: 0 .3em 0 0;
++	/*margin: 0 .3em 0 0;*/
+ 	overflow: visible;
+ 	background: white;
++	text-shadow: 0 1px 1px #AAAAAA;
++	
+ }
+ #p-cactions li.selected {
+ 	border-color: #fabd23;
+@@ -858,18 +908,21 @@ li#pt-login {
+ 	font-weight: bold;
+ }
+ #p-cactions li a {
+-	background-color: #fbfbfb;
+-	color: #002bb8;
++	/*background-color: #fbfbfb;*/
++	background: url("/skins/wikirennes/onglet_big.png") no-repeat scroll 0 0 #FBFBFB;
++	color: #333;
+ 	border: none;
+-	padding: 0 .8em .3em;
++	/*padding: 0 .8em .3em;*/
++	padding: 0.5em 1em !important;
+ 	position: relative;
+ 	z-index: 0;
+-	margin: 0;
++	margin: 0 -0.3em 0 0;
+ 	text-decoration: none;
+ }
+ #p-cactions li.selected a {
+ 	z-index: 3;
+-	padding: 0 1em .2em!important;
++	/*padding: 0 1em .2em!important;*/
++	padding: 0.5em 1em !important;
+ 	background-color: white;
+ }
+ #p-cactions .new a {
+@@ -878,7 +931,8 @@ li#pt-login {
+ #p-cactions li a:hover {
+ 	z-index: 3;
+ 	text-decoration: none;
+-	background-color: white;
++	/*background-color: white;*/
++	text-shadow: none;
+ }
+ #p-cactions h5 {
+ 	display: none;
+@@ -895,7 +949,7 @@ li#pt-login {
+ }
+ /* offsets to distinguish the tab groups */
+ li#ca-talk {
+-	margin-right: 1.6em;
++	/*margin-right: 1.6em;*/
+ }
+ li#ca-watch, li#ca-unwatch, li#ca-varlang-0, li#ca-print {
+ 	margin-left: 1.6em;
+@@ -912,7 +966,7 @@ li#ca-watch, li#ca-unwatch, li#ca-varlang-0, li#ca-print {
+ 	display: none;
+ }
+ #p-cactions li a {
+-	text-transform: lowercase;
++	/*text-transform: lowercase;*/
+ }
+ 
+ #p-lang {
+@@ -1558,3 +1612,67 @@ div#mw-search-interwiki-caption {
+ .os-suggest {
+ 	font-size: 127%;
+ }
++
++
++
++
++
++
++
++
++
++
++/* --------------------------- Templates */
++
++.accueil-btnModify {
++	float: right;
++}
++
++
++.accueil-contBloc {
++	display:block; 
++	border:1px solid #aaa; 
++	vertical-align:top; 
++	width:100%; 
++	background-color:#ffffff; 
++	margin-bottom:10px; 
++	padding:0px 0px5px 0px; 
++	-moz-border-radius-topleft: 0.9em; 
++	-moz-border-radius-bottomright: 0.9em; 
++	-moz-border-radius-bottomleft: 0.9em;
++}
++
++
++.accueil-fdBloc {
++	background-color:#ececec; 
++	color:#00000; 
++	text-align:center; 
++	font-weight:normal; 
++	margin:0px 0px 0px 0px; 
++	padding:5px 3px 5px 3em; 
++	font-size:120%;
++	font-family:Arial;
++	font-weight:normal;
++	font-style:normal;
++	font-variant:normal;
++	-moz-border-radius-topleft: 0.9em;
++	text-decoration:none; 
++	text-transform : none;
++	letter-spacing:normal;
++	word-spacing:normal;
++}
++
++
++.accueil-colLeft {
++	width:49%;
++	display:block;
++	float:left;
++	align:left;
++}
++
++.accueil-colRight {
++	width:49%;
++	display:block;
++	float:right;
++	align:right;
++}
+\ No newline at end of file
+diff --git c/skins/monobook/news_icon.png i/skins/wikirennes/news_icon.png
+similarity index 100%
+rename from skins/monobook/news_icon.png
+rename to skins/wikirennes/news_icon.png
+diff --git c/skins/wikirennes/onglet-left.png i/skins/wikirennes/onglet-left.png
+new file mode 100644
+index 0000000..e2b606f
+Binary files /dev/null and i/skins/wikirennes/onglet-left.png differ
+diff --git c/skins/wikirennes/onglet-right.png i/skins/wikirennes/onglet-right.png
+new file mode 100644
+index 0000000..31d0384
+Binary files /dev/null and i/skins/wikirennes/onglet-right.png differ
+diff --git c/skins/wikirennes/onglet.png i/skins/wikirennes/onglet.png
+new file mode 100644
+index 0000000..10bfd98
+Binary files /dev/null and i/skins/wikirennes/onglet.png differ
+diff --git c/skins/wikirennes/onglet_big.png i/skins/wikirennes/onglet_big.png
+new file mode 100644
+index 0000000..b570efc
+Binary files /dev/null and i/skins/wikirennes/onglet_big.png differ
+diff --git c/skins/monobook/required.gif i/skins/wikirennes/required.gif
+similarity index 100%
+rename from skins/monobook/required.gif
+rename to skins/wikirennes/required.gif
+diff --git c/skins/monobook/rtl.css i/skins/wikirennes/rtl.css
+similarity index 100%
+rename from skins/monobook/rtl.css
+rename to skins/wikirennes/rtl.css
+diff --git c/skins/wikirennes/separator.png i/skins/wikirennes/separator.png
+new file mode 100644
+index 0000000..d1b35f2
+Binary files /dev/null and i/skins/wikirennes/separator.png differ
+diff --git c/skins/monobook/user.gif i/skins/wikirennes/user.gif
+similarity index 100%
+rename from skins/monobook/user.gif
+rename to skins/wikirennes/user.gif
+diff --git c/skins/monobook/video.png i/skins/wikirennes/video.png
+similarity index 100%
+rename from skins/monobook/video.png
+rename to skins/wikirennes/video.png
+diff --git c/skins/monobook/wiki-indexed.png i/skins/wikirennes/wiki-indexed.png
+similarity index 100%
+rename from skins/monobook/wiki-indexed.png
+rename to skins/wikirennes/wiki-indexed.png
+diff --git c/skins/monobook/wiki.png i/skins/wikirennes/wiki.png
+similarity index 100%
+rename from skins/monobook/wiki.png
+rename to skins/wikirennes/wiki.png
