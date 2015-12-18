@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Siebrand",
+			"Sjoerddebruin"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "De klassieke MediaWiki-vormgeving sinds 2004, genoemd naar de zwart-witfoto van een boek op de achtergrond van de pagina",
+	"wikirennes.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op het uiterlijk WikiRennes */",
+	"wikirennes.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die het uiterlijk WikiRennes gebruiken */"
+}

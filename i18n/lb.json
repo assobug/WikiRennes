@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "De klassesche Look vu MediaWiki zanter 2004, benannt no der Schwaarzwäissfoto vun engem Buch am Hannergrond vun der Säit",
+	"wikirennes.css": "/* Dës CSS huet nëmmen Afloss op de Skin ''WikiRennes''  */",
+	"wikirennes.js": "/* All JavaScript hei gëtt gelueden esoubal ee Benotzer d'Ausgesinn WikiRennes benotzt */"
+}

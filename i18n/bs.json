@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"CERminator",
+			"Kal-El",
+			"Srdjan m"
+		]
+	},
+	"skinname-wikirennes": "MonoKnjiga",
+	"wikirennes-desc": "Klasična MediaWiki tema iz 2004. Dobila je ime po crnobijeloj slici knjige u pozadini stranice",
+	"wikirennes.css": "/* CSS umetnut ovdje uticat će na korisnike koji koriste WikiRennes skin */",
+	"wikirennes.js": "/* Bilo koja JavaScript će biti učitana za sve korisnike koji koriste WikiRennes skin */"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Helix84",
+			"Rudko"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/* Tu umiestnené CSS bude ovplyvňovať používateľov štýlu WikiRennes */",
+	"wikirennes.js": "/* Tu sa nachádzajúci JavaScript sa načíta používateľom vzhľadu WikiRennes */"
+}

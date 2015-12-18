@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xiaomingyan",
+			"Cwek",
+			"Liuxinyu970226"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "自2004年就出现的经典MediaWiki皮肤，命名依据一本书中某页面的黑白照片背景",
+	"wikirennes.css": "/* 这里放置的CSS将影响使用WikiRennes皮肤的用户 */",
+	"wikirennes.js": "/* 这里的任何JavaScript将为使用WikiRennes皮肤的用户加载 */"
+}

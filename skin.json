@@ -1,0 +1,59 @@
+{
+	"name": "WikiRennes",
+	"author": [
+		"Gabriel Wicke",
+		"..."
+	],
+	"url": "http://www.wiki-rennes.fr",
+	"descriptionmsg": "wikirennes-desc",
+	"namemsg": "skinname-wikirennes",
+	"license-name": "GPL-2.0+",
+	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.25.0"
+	},
+	"ValidSkinNames": {
+		"wikirennes": "WikiRennes"
+	},
+	"SkinOOUIThemes": {
+		"wikirennes": "Apex"
+	},
+	"MessagesDirs": {
+		"WikiRennes": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.wikirennes.styles": {
+			"position": "top",
+			"styles": {
+				"main.css": {
+					"media": "screen"
+				}
+			}
+		},
+		"skins.wikirennes.js": {
+			"scripts": [
+				"wikirennes.js"
+			],
+			"position": "top",
+			"dependencies": [
+				"mediawiki.toolbar"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "WikiRennes"
+	},
+	"ResourceModuleSkinStyles": {
+		"wikirennes": {
+			"+mediawiki.special.preferences.styles": "skinStyles/mediawiki.special.preferences.styles.less"
+		}
+	},
+	"AutoloadClasses": {
+		"SkinWikiRennes": "SkinWikiRennes.php",
+		"WikiRennesTemplate": "WikiRennesTemplate.php"
+	},
+	"manifest_version": 1
+}

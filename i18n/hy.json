@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Teak"
+		]
+	},
+	"skinname-wikirennes": "ՄիաԳիրք",
+	"wikirennes.css": "/* Այստեղ տեղադրված CSS կոդը կկիրառվի WikiRennes տեսքի վրա*/",
+	"wikirennes.js": "/* Հնացած է. օգտագործեք [[MediaWiki:common.js]] */"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16",
+			"Darth Kule"
+		]
+	},
+	"wikirennes-desc": "La skin classica di MediaWiki dal 2004, prende il nome dall'immagine in bianco e nero del libro usata come sfondo della pagina",
+	"wikirennes.css": "/* Gli stili CSS inseriti qui si applicano agli utenti che usano la skin WikiRennes */",
+	"wikirennes.js": "/* Il codice JavaScript inserito qui viene caricato dagli utenti che usano la skin WikiRennes */"
+}

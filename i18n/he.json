@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rotemliss",
+			"Amire80"
+		]
+	},
+	"skinname-wikirennes": "מונובוק",
+	"wikirennes-desc": "העיצוב הקלאסי של מדיה־ויקי מ־2004, שנקרא על שם הצילום השחור־לבן של ספר ברקע",
+	"wikirennes.css": "/* הסגנונות הנכתבים כאן ישפיעו על העיצוב WikiRennes בלבד */",
+	"wikirennes.js": "/* כל סקריפט JavaScript שנכתב כאן ירוץ רק עבור המשתמשים בעיצוב WikiRennes */"
+}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Filipinayzd"
+		]
+	},
+	"wikirennes.css": "/* an CSS na pigbugtak digdi makakaapektar sa mga parágamit kan WikiRennes skin */",
+	"wikirennes.js": "/* Deprecado; gamiton an [[MediaWiki:common.js]] */"
+}

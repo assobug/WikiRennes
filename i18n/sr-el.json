@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rancher"
+		]
+	},
+	"skinname-wikirennes": "Monobuk",
+	"wikirennes.css": "/* CSS postavljen ovde će uticati na sve korisnike teme „Monobuk“ */",
+	"wikirennes.js": "/* Javaskript postavljen ovde će se učitati za sve one koji koriste temu „Monobuk“ */"
+}

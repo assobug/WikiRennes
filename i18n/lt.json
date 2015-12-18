@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Garas",
+			"Albertas",
+			"Zygimantus"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Klasikinė MediaWiki išvaizda nuo 2004 m., pavadinta pagal juodos-ir-baltos knygos nuotrauką puslapio fone.",
+	"wikirennes.css": "/* Čia įdėtas CSS bus rodomas WikiRennes išvaizdos naudotojams */",
+	"wikirennes.js": "/* Šis JavaScript bus įkeltas tik „WikiRennes“ išvaizdos naudotojams. */"
+}

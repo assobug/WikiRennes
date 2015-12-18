@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fabsouza1",
+			"Cainamarques"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "A skin clássica do MediaWiki desde 2004, assim chamada pela imagem preto e branco de um livro que é colocada no plano de fundo da página",
+	"wikirennes.css": "/* o código CSS colocado aqui terá efeito nos usuários do tema WikiRennes */",
+	"wikirennes.js": "/* Qualquer JavaScript aqui colocado afetará os usuários do tema WikiRennes */"
+}

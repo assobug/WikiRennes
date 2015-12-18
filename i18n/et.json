@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "2004. aastast pärinev klassikaline MediaWiki kujundus, mis on nime saanud lehekülje taustal oleva mustvalge raamatu foto järgi",
+	"wikirennes.css": "/* Siin asuv kaskaadilaadistik puudutab kõiki WikiRennesi-kujunduse kasutajaid. */",
+	"wikirennes.js": "/* Siin asuv JavaScript laaditakse WikiRennesi-kujunduse kasutajate jaoks. */"
+}

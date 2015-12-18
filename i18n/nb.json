@@ -1,0 +1,7 @@
+{
+	"@metadata": [],
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Den klassiske MediaWiki-drakten fra 2004, oppkalt etter svarthvittbildet av en bok  som brukes som bakgrunnsbilde",
+	"wikirennes.css": "/* CSS i denne fila vil gjelde alle som bruker drakta WikiRennes */",
+	"wikirennes.js": "/* Javascript i denne fila vil gjelde for brukere av drakta WikiRennes */"
+}

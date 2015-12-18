@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dani",
+			"Tacsipacsi"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "A klasszikus MediaWiki-felület 2004 óta; egy könyv fekete-fehér fotója alapján kapta a nevét",
+	"wikirennes.css": "/* Az ide elhelyezett CSS hatással lesz a WikiRennes felület használóira */",
+	"wikirennes.js": "/* A WikiRennes felületet használó szerkesztők számára betöltendő JavaScriptek */"
+}

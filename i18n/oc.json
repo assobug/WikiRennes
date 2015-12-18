@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/* Lo CSS plaçat aicí afectarà los utilizaires del skin WikiRennes */",
+	"wikirennes.js": "/* Tot JavaScript aicí serà cargat amb las paginas accedidas pels utilizaires de l’abilhatge WikiRennes unicament. */"
+}

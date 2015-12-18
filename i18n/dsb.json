@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Michawiki",
+			"Nepl1"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/* How zaměstnjony CSS wustatkujo se na wužywarje monobook-šata */",
+	"wikirennes.js": "/* Slědujucy JavaScript zacytajo se za wužywarjow, kótarež skin WikiRennes wužywaju */"
+}

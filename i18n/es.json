@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sanbec",
+			"Vivaelcelta",
+			"Fitoschido",
+			"Macofe"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "La apariencia clásica de MediaWiki desde 2004, cuyo nombre viene de la foto en blanco y negro de un libro en el fondo",
+	"wikirennes.css": "/* El CSS colocado en esta página afectará a los usuarios que usen la apariencia \"WikiRennes\" */",
+	"wikirennes.js": "/* El código JavaScript que se ponga aquí será cargado por los usuarios de la apariencia WikiRennes */"
+}

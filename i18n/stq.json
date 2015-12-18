@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Maartenvdbent"
+		]
+	},
+	"wikirennes.css": "/* Littikschrieuwen nit twinge */",
+	"wikirennes.js": "/* Ferallerd; benutsje insteede deerfon [[MediaWiki:common.js]] */"
+}

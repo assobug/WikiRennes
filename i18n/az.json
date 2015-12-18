@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vago",
+			"Vugar 1981"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/* Burada yerləşən CSS WikiRennes skin istifadəçilərinə tətbiq olunur */",
+	"wikirennes.js": "/* Burada WikiRennes skin istifadəçiləri üçün istənilən JavaScript yüklənəcək */"
+}

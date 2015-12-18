@@ -1,0 +1,6 @@
+{
+	"@metadata": [],
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/** Ovdje idu izmjene monobook stylesheeta */",
+	"wikirennes.js": "/* Ne rabi se više; molimo rabite [[MediaWiki:common.js]] */"
+}

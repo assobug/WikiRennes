@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"AlexSm",
+			"Kaganer",
+			"Okras"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Классическая тема оформления MediaWiki, созданная в 2004 году и названая в честь чёрно-белой фотографии книги с фонового изображения страницы",
+	"wikirennes.css": "/* Размещённый здесь CSS будет применяться к теме оформления WikiRennes */",
+	"wikirennes.js": "/* Размещённый здесь код JavaScript будет загружаться пользователям, использующим тему оформления WikiRennes */"
+}

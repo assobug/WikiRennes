@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Võrok"
+		]
+	},
+	"wikirennes.css": "/* Taa lehe pääl om WikiRennes-vällänägemist muutvit kujonduisi. */",
+	"wikirennes.js": "/* Olõi soovitõt; pruugiq [[MediaWiki:common.js]] */"
+}

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Santu",
+			"Sarvaturi",
+			"Tonyfroio",
+			"Pippinu"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "La peddi tradizziunali di MediaWiki a pàrtiri dû 2004, chi pigghia lu nomu di na fotu n jancu e nìuru dûn libbru ca si vidi ntô sfunnu dâ pàggina",
+	"wikirennes.css": "/* Li stili CSS nziriti ccà s'àpplicanu a l'utenti chi usanu la skin WikiRennes */",
+	"wikirennes.js": "/* Lu còdici JavaScript nzirutu ccà veni carricatu di l'utenti c'ùsanu la skin WikiRennes */"
+}

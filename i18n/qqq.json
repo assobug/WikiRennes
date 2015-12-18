@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Meno25",
+			"Umherirrender",
+			"Matma Rex",
+			"Raymond"
+		]
+	},
+	"skinname-wikirennes": "{{optional}}",
+	"wikirennes-desc": "{{desc|what=skin|name=WikiRennes|url=https://www.mediawiki.org/wiki/Skin:MonoBook}}",
+	"wikirennes.css": "{{optional}}\nCSS applied to users using WikiRennes skin.",
+	"wikirennes.js": "{{optional}}\nJS for users using WikiRennes skin."
+}

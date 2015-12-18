@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Crt",
+			"McSalama",
+			"Jack Phoenix"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Klassinen MediaWiki-ulkoasu vuodesta 2004, saanut nimensä mustavalkoisesta kirjan kuvasta sivun taustalla",
+	"wikirennes.css": "/* Tämä sivu sisältää WikiRennes-ulkoasua muuttavia tyylejä. */",
+	"wikirennes.js": "/* Tämän sivun JavaScript-koodi liitetään WikiRennes-tyyliin */"
+}

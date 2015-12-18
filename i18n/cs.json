@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Danny B.",
+			"Li-sung",
+			"Mormegil"
+		]
+	},
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Klasický vzhled MediaWiki od roku 2004, pojmenovaný po černobílé fotografii knihy v pozadí stránky",
+	"wikirennes.css": "/* Zde uvedené CSS bude ovlivňovat pouze styl „WikiRennes“ */",
+	"wikirennes.js": "/* JavaScript pro uživatele používající vzhled WikiRennes */"
+}
