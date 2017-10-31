@@ -7,8 +7,8 @@
 			"Raymond"
 		]
 	},
-	"skinname-monobook": "{{name}}",
-	"monobook-desc": "{{desc|what=skin|name=MonoBook|url=https://www.mediawiki.org/wiki/Skin:MonoBook}}",
-	"monobook.css": "{{optional}}\nCSS applied to users using MonoBook skin.",
-	"monobook.js": "{{optional}}\nJS for users using MonoBook skin."
+	"skinname-wikirennes": "{{name}}",
+	"wikirennes-desc": "{{desc|what=skin|name=WikiRennes|url=https://www.mediawiki.org/wiki/Skin:WikiRennes}}",
+	"wikirennes.css": "{{optional}}\nCSS applied to users using WikiRennes skin.",
+	"wikirennes.js": "{{optional}}\nJS for users using WikiRennes skin."
 }

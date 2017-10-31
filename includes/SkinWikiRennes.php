@@ -1,5 +1,6 @@
 <?php
 /**
+ * WikiRennes_skin d'après :
  * MonoBook nouveau.
  *
  * Translated from gwicke's previous TAL template version to remove
@@ -28,11 +29,11 @@
  * Inherit main code from SkinTemplate, set the CSS and template filter.
  * @ingroup Skins
  */
-class SkinMonoBook extends SkinTemplate {
+class SkinWikiRennes extends SkinTemplate {
 	/** Using MonoBook. */
-	public $skinname = 'monobook';
-	public $stylename = 'MonoBook';
-	public $template = 'MonoBookTemplate';
+	public $skinname  = 'wikirennes';
+	public $stylename = 'WikiRennes';
+	public $template  = 'WikiRennesTemplate';
 
 	/**
 	 * @param OutputPage $out
@@ -43,8 +44,10 @@ class SkinMonoBook extends SkinTemplate {
 		$out->addModuleStyles( [
 			'mediawiki.skinning.interface',
 			'mediawiki.skinning.content.externallinks',
-			'skins.monobook.styles'
+			'skins.wikirennes.styles'
 		] );
+
+		$out->addModules( array( 'skins.wikirennes.js' ) );
 
 		// TODO: Migrate all of these
 		$out->addStyle( $this->stylename . '/resources/IE60Fixes.css', 'screen', 'IE 6' );

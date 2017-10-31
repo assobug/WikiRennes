@@ -5,7 +5,7 @@
 			"Sky Harbor"
 		]
 	},
-	"skinname-monobook": "MonoBook",
-	"monobook.css": "/* Ang CSS na inilagay dito ay makakaapekto sa mga tagagamit ng pabalat na Monobook */",
-	"monobook.js": "/* Ang anumang JavaScript dito ay ikakarga para sa mga tagagamit na gumagamit ng pabalat na MonoBook */"
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/* Ang CSS na inilagay dito ay makakaapekto sa mga tagagamit ng pabalat na WikiRennes */",
+	"wikirennes.js": "/* Ang anumang JavaScript dito ay ikakarga para sa mga tagagamit na gumagamit ng pabalat na WikiRennes */"
 }

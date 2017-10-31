@@ -1,43 +1,52 @@
 {
-	"name": "MonoBook",
+	"name": "WikiRennes",
 	"author": [
 		"Gabriel Wicke",
 		"..."
 	],
-	"url": "https://www.mediawiki.org/wiki/Skin:MonoBook",
-	"descriptionmsg": "monobook-desc",
-	"namemsg": "skinname-monobook",
+	"url": "http://www.wiki-rennes.fr",
+	"descriptionmsg": "wikirennes-desc",
+	"namemsg": "skinname-wikirennes",
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
 		"MediaWiki": ">= 1.25.0"
 	},
 	"ValidSkinNames": {
-		"monobook": "MonoBook"
+		"wikirennes": "WikiRennes"
 	},
 	"SkinOOUIThemes": {
-		"monobook": "Apex"
+		"wikirennes": "Apex"
 	},
 	"MessagesDirs": {
-		"MonoBook": [
+		"WikiRennes": [
 			"i18n"
 		]
 	},
 	"ResourceModules": {
-		"skins.monobook.styles": {
+		"skins.wikirennes.styles": {
 			"styles": {
 				"resources/screen-common.less": {
 					"media": "screen"
 				}
 			}
+		},
+		"skins.wikirennes.js": {
+			"scripts": [
+				"wikirennes.js"
+			],
+			"position": "top",
+			"dependencies": [
+				"mediawiki.toolbar"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": "MonoBook"
+		"remoteSkinPath": "WikiRennes"
 	},
 	"ResourceModuleSkinStyles": {
-		"monobook": {
+		"wikirennes": {
 			"+mediawiki.action.view.redirectPage": "resources/skinStyles/mediawiki.action.view.redirectPage.css",
 			"+mediawiki.special.preferences.styles": "resources/skinStyles/mediawiki.special.preferences.styles.less",
 			"+mediawiki.notification": "resources/skinStyles/mediawiki.notification.less",
@@ -45,8 +54,8 @@
 		}
 	},
 	"AutoloadClasses": {
-		"SkinMonoBook": "includes/SkinMonoBook.php",
-		"MonoBookTemplate": "includes/MonoBookTemplate.php"
+		"SkinWikiRennes": "includes/SkinWikiRennes.php",
+		"WikiRennesTemplate": "includes/WikiRennesTemplate.php"
 	},
 	"manifest_version": 1
 }
