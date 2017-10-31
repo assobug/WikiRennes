@@ -1,4 +1,5 @@
 /*
+** WikiRennes based on :
 ** MediaWiki 'monobook' style sheet for CSS2-capable browsers.
 ** Copyright Gabriel Wicke - http://wikidev.net/
 ** License: GPL (http://www.gnu.org/copyleft/gpl.html)
@@ -12,24 +13,28 @@
 div#column-content {
 	width: 100%;
 	float: right;
-	margin: 0 0 0.6em -12.2em;
+	margin: 140px 0 0.6em -20.2em;
 	padding: 0;
 }
 
 .mw-body {
-	margin: 2.8em 0 0 12.2em;
-	padding: 1em;
+	margin: 2.8em 0 0 20.2em;
+	padding: 0.5em 2em 2em;
 	position: relative;
 	z-index: 2;
 	background: #fff;
 	color: #000;
-	border: 1px solid #aaa;
-	border-right: 0;
+	border: 1px solid #eee;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
 	line-height: 1.5em;
 }
 
 div#column-one {
 	padding-top: 160px;
+	/* @embed */
+	background: transparent url(colonne-left.png) 0 0 repeat-y;
 }
 
 /* Hide, but keep accessible for screen-readers */
@@ -47,9 +52,9 @@ div#column-one {
 */
 
 body {
-	font: x-small sans-serif;
+	font: x-small georgia;
 	/* @embed */
-	background: #f9f9f9 url( headbg.jpg ) 0 0 no-repeat;
+	background: #fff url(headbg.jpg) 0 0 repeat-x;
 	color: #000;
 	margin: 0;
 	padding: 0;
@@ -69,16 +74,28 @@ div#globalWrapper {
 
 /* general styles */
 a {
-	color: #002bb8;
+	color: #33cc00;
 }
 
 a:visited {
-	color: #5a3696;
+	color: #2eb700;
 }
 
 a.new,
 #p-personal a.new {
-	color: #c20;
+	color: #3399ff;
+}
+a.new:visited,
+#p-personal a.new:visited {
+	color: #2c85dd;
+}
+
+hr {
+	clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: arial;
 }
 
 ul {
@@ -163,22 +180,25 @@ table.rimage {
 */
 .portlet {
 	border: 0;
-	margin: 0 0 0.5em;
+	margin: 0 0 .5em 40px;
 	padding: 0;
 	float: none;
-	width: 11.6em;
+	width: 13.6em;
 	overflow: hidden;
 }
 
 .portlet h3 {
 	background: transparent;
-	padding: 0 1em 0 0.5em;
-	display: inline;
+	padding: 0 0 5px;
+	/*display: inline;*/
 	height: 1em;
-	text-transform: lowercase;
-	font-size: 91%;
-	font-weight: normal;
+	/*text-transform: lowercase;*/
+	font-size: 132%;
+	font-weight: bold;
 	white-space: nowrap;
+	
+	color: #333;
+	text-align: right;
 }
 
 .pBody {
@@ -186,8 +206,10 @@ table.rimage {
 	background-color: #fff;
 	color: #000;
 	border-collapse: collapse;
-	border: 1px solid #aaa;
-	padding: 0 0.8em 0.3em 0.5em;
+	/*border: 1px solid #aaa;*/
+	padding: 0 0 .3em .5em;
+	
+	text-align: right;
 }
 
 /* allows .pBody styles to wrap around content added via BaseTemplateAfterPortlet hook */
@@ -199,6 +221,8 @@ table.rimage {
 
 .portlet ul {
 	line-height: 1.5em;
+	list-style-type: none;
+	list-style-image: none;
 	font-size: 95%;
 }
 
@@ -206,14 +230,21 @@ table.rimage {
 	padding: 0;
 	margin: 0;
 }
+/* dweez */
+.portlet li a {
+	color: #333;
+}
+.portlet li a:visited {
+	color: #666;
+}
 
 /*
 ** Logo properties
 */
 
 #p-logo {
-	top: 0;
-	left: 0;
+	top: 20px;
+	left: 37px;
 	position: absolute; /*needed to use z-index */
 	z-index: 3;
 	height: 155px;
@@ -231,8 +262,17 @@ table.rimage {
 	height: 155px;
 	width: 12.2em;
 	background-repeat: no-repeat;
-	background-position: 35% 50% !important; /* stylelint-disable-line declaration-no-important */
+	/*background-position: 35% 50% !important;*/
 	text-decoration: none;
+}
+
+/*
+** Footer portlet
+*/
+
+#p-footer {
+	padding: 1em 2em;
+	width: 10.6em;
 }
 
 /*
@@ -297,7 +337,7 @@ input.searchButton {
 #p-personal .pBody {
 	z-index: 0;
 	padding: 0;
-	margin: 0;
+	margin: 20px 15px 0;
 	border: 0;
 	overflow: visible;
 	background: none;
@@ -335,8 +375,15 @@ input.searchButton {
 
 #p-personal li a {
 	text-decoration: none;
-	color: #005896;
-	padding-bottom: 0.2em;
+	color: #333;
+	padding-bottom: .2em;
+	background: #fff none;
+	
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #D7D7D7;
+	padding: 5px 10px;
 }
 
 #p-personal li a:hover {
@@ -376,16 +423,16 @@ li#pt-anonuserpage {
 */
 #p-cactions {
 	position: absolute;
-	top: 1.3em;
-	left: 11.5em;
-	margin: 0;
+	top: 19px;
+	left: 20em;
+	margin: 101px 0 0;
 	white-space: nowrap;
-	width: 76%;
+	/*width: 76%;*/
 	line-height: 1.1em;
 	overflow: visible;
 	background: none;
 	border-collapse: collapse;
-	padding-left: 1em;
+	/*padding-left: 1em;*/
 	font-size: 95%;
 }
 
@@ -396,12 +443,13 @@ li#pt-anonuserpage {
 
 #p-cactions li {
 	display: inline;
-	border: 1px solid #aaa;
-	border-bottom: 0;
+	/*border: 1px solid #aaa;
+	border-bottom: none;*/
 	padding: 0 0 1em 0;
-	margin: 0 0.3em 0 0;
+	/*margin: 0 .3em 0 0;*/
 	overflow: visible;
-	background: #fff;
+	background: white;
+	text-shadow: 0 1px 1px #aaaaaa;
 }
 
 #p-cactions li.selected {
@@ -410,19 +458,22 @@ li#pt-anonuserpage {
 }
 
 #p-cactions li a {
-	background-color: #fbfbfb;
-	color: #002bb8;
+	/*background-color: #fbfbfb;*/
+	/* @embed */
+	background: url(onglet_big.png) no-repeat scroll 0 0 #FBFBFB;
+	color: #333;
 	border: 0;
-	padding: 0 0.8em 0.3em;
+	padding: 0.5em 1em !important;
 	position: relative;
 	z-index: 0;
-	margin: 0;
+	margin: 0 -0.3em 0 0;
 	text-decoration: none;
 	text-transform: lowercase;
 }
 
 #p-cactions li.selected a {
 	z-index: 3;
+	padding: 0.5em 1em !important;
 	background-color: #fff;
 }
 
@@ -433,7 +484,8 @@ li#pt-anonuserpage {
 #p-cactions li a:hover {
 	z-index: 3;
 	text-decoration: none;
-	background-color: #fff;
+	/*background-color: #fff;*/
+	text-shadow: none;
 }
 
 #p-cactions h3 {
@@ -455,7 +507,7 @@ li#pt-anonuserpage {
 
 /* offsets to distinguish the tab groups */
 li#ca-talk {
-	margin-right: 1.6em;
+	/*margin-right: 1.6em;*/
 }
 
 li#ca-watch,
@@ -472,6 +524,10 @@ li#ca-print {
 	border-collapse: inherit;
 	border: 0;
 	padding: 0;
+}
+
+#p-cactions li a {
+	/*text-transform: lowercase;*/
 }
 
 #p-lang {
@@ -669,4 +725,154 @@ div.mw-lag-warn-high {
 /* Tooltips are outside of the normal body code, so this helps make the size of the text sensible */
 .tipsy {
 	font-size: 127%;
+}
+
+/* mediawiki.notification */
+.skin-monobook .mw-notification {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.125);
+}
+
+/* Règles anciennement dans MonoBook, retirées depuis, mais utilisées sur Wiki-Rennes */
+
+div.thumbinner {
+	border: 1px solid #eee;
+	background-color: #eee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+#p-search h3 {
+	display: none;
+}
+ul {
+	line-height: 1.5em;
+	list-style-type: square;
+	margin: .3em 0 0 1.5em;
+	padding: 0;
+	list-style-image: url(bullet.gif);
+}
+ol {
+	line-height: 1.5em;
+	margin: .3em 0 0 3.2em;
+	padding: 0;
+	list-style-image: none;
+}
+li {
+	margin-bottom: .1em;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: black;
+	background: none;
+	font-weight: normal;
+	margin: 0;
+	padding-top: .5em;
+	padding-bottom: .17em;
+	border-bottom: 1px solid #aaa;
+	
+	font-family: arial;
+}
+h1 { font-size: 188%; }
+h1 .editsection { font-size: 53%; }
+h2 { font-size: 150%; }
+h2 .editsection { font-size: 67%; }
+h3, h4, h5, h6 {
+	border-bottom: none;
+	font-weight: bold;
+}
+h3 { font-size: 132%; }
+h3 .editsection { font-size: 76%; font-weight: normal; }
+h4 { font-size: 116%; }
+h4 .editsection { font-size: 86%; font-weight: normal; }
+h5 { font-size: 100%; }
+h5 .editsection { font-weight: normal; }
+h6 { font-size: 80%;  }
+h6 .editsection { font-size: 125%; font-weight: normal; }
+#bodyContent h1, #bodyContent h2 {
+        margin-bottom: .6em;
+}
+#firstHeading {
+	padding-top: 0.5em;
+}
+.accueil-fdBloc {
+	overflow: visible;
+}
+
+/* Changement dans Echo qui rend mal, retour à l’ancien design */
+#pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-message .mw-echo-notifications-badge {
+	display: inline;
+	font-weight: normal;
+	padding: 5px 10px;
+}
+#footer #copyright {
+	display: none;
+}
+#f-copyrightico img {
+	border: 2px solid black;
+}
+div#footer {
+	padding-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------------- Templates */
+
+.accueil-btnModify {
+	float: right;
+}
+
+
+.accueil-contBloc {
+	display:block; 
+	border:1px solid #aaa; 
+	vertical-align:top; 
+	width:100%; 
+	background-color:#ffffff; 
+	margin-bottom:10px; 
+	padding:0px 0px5px 0px; 
+	-moz-border-radius-topleft: 0.9em; 
+	-moz-border-radius-bottomright: 0.9em; 
+	-moz-border-radius-bottomleft: 0.9em;
+}
+
+
+.accueil-fdBloc {
+	background-color:#ececec; 
+	color:#00000; 
+	text-align:center; 
+	font-weight:normal; 
+	margin:0px 0px 0px 0px; 
+	padding:5px 3px 5px 3em; 
+	font-size:120%;
+	font-family:Arial;
+	font-weight:normal;
+	font-style:normal;
+	font-variant:normal;
+	-moz-border-radius-topleft: 0.9em;
+	text-decoration:none; 
+	text-transform : none;
+	letter-spacing:normal;
+	word-spacing:normal;
+}
+
+
+.accueil-colLeft {
+	width:49%;
+	display:block;
+	float:left;
+	align:left;
+}
+
+.accueil-colRight {
+	width:49%;
+	display:block;
+	float:right;
+	align:right;
 }

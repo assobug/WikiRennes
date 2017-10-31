@@ -4,6 +4,6 @@
 			"Filipinayzd"
 		]
 	},
-	"monobook.css": "/* an CSS na pigbugtak digdi makakaapektar sa mga parágamit kan Monobook skin */",
-	"monobook.js": "/* Deprecado; gamiton an [[MediaWiki:common.js]] */"
+	"wikirennes.css": "/* an CSS na pigbugtak digdi makakaapektar sa mga parágamit kan WikiRennes skin */",
+	"wikirennes.js": "/* Deprecado; gamiton an [[MediaWiki:common.js]] */"
 }

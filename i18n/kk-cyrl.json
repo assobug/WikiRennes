@@ -4,7 +4,7 @@
 			"Arystanbek"
 		]
 	},
-	"skinname-monobook": "Жеке кітап (monobook)",
-	"monobook.css": "/* Мында орналастырылған CSS тек «Дара кітап» (monobook) мәнерін пайдаланушыларына ықпал етеді */",
-	"monobook.js": "/* Мындағы JavaScript тек «Дара кітап» (monobook) мәнерін пайдаланушылар үшін жегіледі */"
+	"skinname-wikirennes": "Жеке кітап (monobook)",
+	"wikirennes.css": "/* Мында орналастырылған CSS тек «Дара кітап» (monobook) мәнерін пайдаланушыларына ықпал етеді */",
+	"wikirennes.js": "/* Мындағы JavaScript тек «Дара кітап» (monobook) мәнерін пайдаланушылар үшін жегіледі */"
 }

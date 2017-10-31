@@ -5,7 +5,7 @@
 			"Rudko"
 		]
 	},
-	"skinname-monobook": "MonoBook",
-	"monobook.css": "/* Tu umiestnené CSS bude ovplyvňovať používateľov štýlu Monobook */",
-	"monobook.js": "/* Tu sa nachádzajúci JavaScript sa načíta používateľom vzhľadu Monobook */"
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes.css": "/* Tu umiestnené CSS bude ovplyvňovať používateľov štýlu WikiRennes */",
+	"wikirennes.js": "/* Tu sa nachádzajúci JavaScript sa načíta používateľom vzhľadu WikiRennes */"
 }

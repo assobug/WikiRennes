@@ -6,8 +6,8 @@
 			"Arifin.wijaya"
 		]
 	},
-	"skinname-monobook": "MonoBook",
-	"monobook-desc": "Kulit MediaWiki klasik sejak tahun 2004, dinamai foto hitam-putih dari buku di latar belakang halaman",
-	"monobook.css": "/* CSS yang ada di sini akan diterapkan pada kulit Monobook. */",
-	"monobook.js": "/* Semua JavaScript di sini akan dimuatkan untuk para pengguna yang menggunakan kulit MonoBook */"
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Kulit MediaWiki klasik sejak tahun 2004, dinamai foto hitam-putih dari buku di latar belakang halaman",
+	"wikirennes.css": "/* CSS yang ada di sini akan diterapkan pada kulit WikiRennes. */",
+	"wikirennes.js": "/* Semua JavaScript di sini akan dimuatkan untuk para pengguna yang menggunakan kulit WikiRennes */"
 }

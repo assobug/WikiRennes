@@ -6,8 +6,8 @@
 			"Zygimantus"
 		]
 	},
-	"skinname-monobook": "MonoBook",
-	"monobook-desc": "Klasikinė MediaWiki išvaizda nuo 2004 m., pavadinta pagal juodos-ir-baltos knygos nuotrauką puslapio fone.",
-	"monobook.css": "/* Čia įdėtas CSS bus rodomas Monobook išvaizdos naudotojams */",
-	"monobook.js": "/* Šis JavaScript bus įkeltas tik „MonoBook“ išvaizdos naudotojams. */"
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "Klasikinė MediaWiki išvaizda nuo 2004 m., pavadinta pagal juodos-ir-baltos knygos nuotrauką puslapio fone.",
+	"wikirennes.css": "/* Čia įdėtas CSS bus rodomas WikiRennes išvaizdos naudotojams */",
+	"wikirennes.js": "/* Šis JavaScript bus įkeltas tik „WikiRennes“ išvaizdos naudotojams. */"
 }

@@ -5,8 +5,8 @@
 			"Tacsipacsi"
 		]
 	},
-	"skinname-monobook": "MonoBook",
-	"monobook-desc": "A klasszikus MediaWiki-felület 2004 óta; egy könyv fekete-fehér fotója alapján kapta a nevét",
-	"monobook.css": "/* Az ide elhelyezett CSS hatással lesz a MonoBook felület használóira */",
-	"monobook.js": "/* A MonoBook felületet használó szerkesztők számára betöltendő JavaScriptek */"
+	"skinname-wikirennes": "WikiRennes",
+	"wikirennes-desc": "A klasszikus MediaWiki-felület 2004 óta; egy könyv fekete-fehér fotója alapján kapta a nevét",
+	"wikirennes.css": "/* Az ide elhelyezett CSS hatással lesz a WikiRennes felület használóira */",
+	"wikirennes.js": "/* A WikiRennes felületet használó szerkesztők számára betöltendő JavaScriptek */"
 }

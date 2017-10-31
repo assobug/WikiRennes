@@ -1,5 +1,6 @@
 <?php
 /**
+ * WikiRennes_skin d'après :
  * MonoBook nouveau.
  *
  * Translated from gwicke's previous TAL template version to remove
@@ -27,7 +28,7 @@
 /**
  * @ingroup Skins
  */
-class MonoBookTemplate extends BaseTemplate {
+class WikiRennesTemplate extends BaseTemplate {
 
 	/**
 	 * Template filter callback for MonoBook skin.
@@ -154,6 +155,14 @@ class MonoBookTemplate extends BaseTemplate {
 			<?php
 			$this->renderPortals( $this->data['sidebar'] );
 			?>
+
+		<div class="portlet" id="p-footer">
+			<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/logo-vdr.png" width="66" height="58" style="float: right;"/>
+			<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/logo-bug.png" width="47" height="78" />
+			<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/logo-metropole.png" width="120" height="46" style="margin: 15px 0 0 10px;" />
+		</div>
+		<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/cl-footer.png" width="230" height="50" style="margin-left: 12px;" />
+
 		</div><!-- end of the left (by default at least) column -->
 		<div class="visualClear"></div>
 		<?php
@@ -276,6 +285,7 @@ class MonoBookTemplate extends BaseTemplate {
 
 				<?php $this->renderAfterPortlet( 'search' ); ?>
 			</div>
+			<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/separator.png" width="168" height="1" style="margin: 10px 0 0;" />
 		</div>
 	<?php
 	}
@@ -290,12 +300,18 @@ class MonoBookTemplate extends BaseTemplate {
 			<h3><?php $this->msg( 'views' ) ?></h3>
 
 			<div class="pBody">
-				<ul><?php
+				<ul>
+				<li id="ong-left">
+					<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/onglet-left.png" border="0" width="3" height="25" style="margin-right: -0.3em;" />
+				</li><?php
 					foreach ( $this->data['content_actions'] as $key => $tab ) {
 						echo '
 				' . $this->makeListItem( $key, $tab );
 					} ?>
 
+				<li id="ong-right">
+					<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/onglet-right.png" border="0" width="6" height="25" />
+				</li>
 				</ul>
 				<?php $this->renderAfterPortlet( 'cactions' ); ?>
 			</div>
@@ -325,6 +341,7 @@ class MonoBookTemplate extends BaseTemplate {
 				</ul>
 				<?php $this->renderAfterPortlet( 'tb' ); ?>
 			</div>
+			<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/separator.png" width="168" height="1" style="margin: 10px 0 0;" />
 		</div>
 	<?php
 		Hooks::run( 'MonoBookAfterToolbox' );
@@ -396,6 +413,7 @@ class MonoBookTemplate extends BaseTemplate {
 			$this->renderAfterPortlet( $bar );
 			?>
 		</div>
+		<img src="<?php echo $this->text('stylepath') ?>/WikiRennes/separator.png" width="168" height="1" style="margin: 10px 0 0;" />
 		</div>
 	<?php
 	}

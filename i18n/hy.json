@@ -4,7 +4,7 @@
 			"Teak"
 		]
 	},
-	"skinname-monobook": "ՄիաԳիրք",
-	"monobook.css": "/* Այստեղ տեղադրված CSS կոդը կկիրառվի Monobook տեսքի վրա*/",
-	"monobook.js": "/* Հնացած է. օգտագործեք [[MediaWiki:common.js]] */"
+	"skinname-wikirennes": "ՄիաԳիրք",
+	"wikirennes.css": "/* Այստեղ տեղադրված CSS կոդը կկիրառվի WikiRennes տեսքի վրա*/",
+	"wikirennes.js": "/* Հնացած է. օգտագործեք [[MediaWiki:common.js]] */"
 }
