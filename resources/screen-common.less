@@ -475,7 +475,6 @@ li#pt-anonuserpage {
 	z-index: 0;
 	margin: 0 -0.3em 0 0;
 	text-decoration: none;
-	text-transform: lowercase;
 }
 
 #p-cactions li.selected a {
@@ -804,11 +803,10 @@ h6 .editsection { font-size: 125%; font-weight: normal; }
 	overflow: visible;
 }
 
-/* Changement dans Echo qui rend mal, retour à l’ancien design */
-#pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-message .mw-echo-notifications-badge {
-	display: inline;
-	font-weight: normal;
-	padding: 5px 10px;
+/* Ajustements de Echo */
+#pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-notice .mw-echo-notifications-badge {
+	border: 0;
+	padding: 0 0 .2em 0;
 }
 #footer #copyright {
 	display: none;
